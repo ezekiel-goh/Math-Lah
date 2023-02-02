@@ -89,15 +89,6 @@ const App = () => {
       </View>
 
       <View style={{ flex: 17, marginTop: 30 }}>
-        {/* <FlatList
-          data={Quizzes}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <View> */}
-        {/* <FlatList
-          data={QuizzesUnlocked}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => ( */}
         {QuizzesUnlocked.map((item) => {
           return (
             <TouchableOpacity
@@ -132,10 +123,6 @@ const App = () => {
           );
         })}
 
-        {/* <FlatList
-          data={QuizzesLocked}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => ( */}
         {QuizzesLocked.map((item) => {
           return (
             <TouchableOpacity

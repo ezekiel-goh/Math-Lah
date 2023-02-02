@@ -11,8 +11,8 @@ import QuizList from "./app/screens/quizList";
 import LessonExample from "./app/screens/LessonExample";
 import LessonList from "./app/screens/LessonList";
 import Home from "./app/screens/homePage";
-import ProExample from "./app/screens/proExample";
-import ProList from "./app/screens/proList";
+import AnswerExample from "./app/screens/answerExample";
+import AnswerList from "./app/screens/answerList";
 
 const Stack = createStackNavigator();
 
@@ -33,8 +33,8 @@ export default function App() {
         <Stack.Screen name="Lesson Example" component={LessonExample} />
         <Stack.Screen name="Lesson List" component={LessonList} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Pro Example" component={ProExample} />
-        <Stack.Screen name="Pro List" component={ProList} />
+        <Stack.Screen name="Answer Example" component={AnswerExample} />
+        <Stack.Screen name="Answer List" component={AnswerList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

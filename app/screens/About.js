@@ -16,6 +16,14 @@ import { useNavigation } from "@react-navigation/native";
 import SafeViewAndroid from "../../app/assets/components/SafeViewAndroid";
 
 export default function App() {
+  const displayAlert = () =>
+    Alert.alert("Touchables!", "Button tapped", [
+      {
+        text: "OK",
+        onPress: () => console.log("OK Pressed"),
+      },
+    ]);
+  const navigation = useNavigation();
   const [loaded] = useFonts({
     NunitoRegular: require("../../app/assets/fonts/Nunito-Regular.ttf"),
     NunitoBold: require("../../app/assets/fonts/Nunito-Bold.ttf"),
@@ -25,14 +33,6 @@ export default function App() {
   if (!loaded) {
     return null;
   }
-  const displayAlert = () =>
-    Alert.alert("Touchables!", "Button tapped", [
-      {
-        text: "OK",
-        onPress: () => console.log("OK Pressed"),
-      },
-    ]);
-  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>

@@ -110,7 +110,7 @@ const navigation = useNavigation();
         <View>
           <View>
             <Text style={styles.questiontext}>
-              Add together 6 hundreds, 24 ones. What number do you get?
+              Add together 6 hundreds, 12 ones. What number do you get?
             </Text>
           </View>
 

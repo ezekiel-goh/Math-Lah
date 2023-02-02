@@ -36,17 +36,15 @@ const App = () => {
   if (!loaded) {
     return null;
   }
-
-
-
+  
   return (
     <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
       <View style={[styles.pagetitle]}>
         <View style={styles.quizCircle}>
-          <Ionicons name="md-stats-chart" size={27} color="black" />
+          <FontAwesome5 name="clipboard-list" size={30} color="black" />
         </View>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
-          <Text style={styles.quizText}>Progress</Text>
+          <Text style={styles.quizText}>Answers</Text>
         </View>
       </View>
 
@@ -56,13 +54,8 @@ const App = () => {
             <Text style={styles.innerBoxText}>Quiz 1</Text>
           </View>
           <View>
-            <Text style={styles.outerBoxText}>Answers</Text>
+            <Text style={styles.outerBoxText}>Addition</Text>
           </View>
-        </View>
-        <View>
-          <Text style={{ fontSize: 24 }}>
-            You scored: 4 out of 4.
-          </Text>
         </View>
         <View>
           <Text style={{ fontSize: 16, color: 'darkred' }}>
@@ -153,7 +146,7 @@ const App = () => {
         <View>
           <View>
             <Text style={styles.questiontext}>
-              3. Add together 6 hundreds, 24 ones. What number do you get?
+              3. Add together 6 tens, 24 ones. What number do you get?
             </Text>
           </View>
 

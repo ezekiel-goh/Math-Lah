@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
@@ -77,8 +78,8 @@ const App = (props) => {
             }}
             onPress={() => navigation.navigate("Lesson List")}
           >
-            <Ionicons name="book" size={48} color="#424242" />
-            <Text style={{ color: "black", fontSize: 20, fontFamily: "NunitoRegular", }}>Lesson</Text>
+          <FontAwesome5 name="book-open" size={48} color="black" />
+            <Text style={{ color: "black", fontSize: 20, fontFamily: 'NunitoBold', }}>Lesson</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -99,10 +100,10 @@ const App = (props) => {
               shadowRadius: 8,
               elevation: 14,
             }}
-            onPress={()=> navigation.navigate('Pro List')}
+            onPress={()=> navigation.navigate('Answer List')}
           >
-            <Ionicons name="md-stats-chart" size={48} color="#424242" />
-            <Text style={{ color: "black", fontSize: 20, fontFamily: "NunitoRegular", }}>Progress</Text>
+            <FontAwesome5 name="clipboard-list" size={48} color="black" />
+            <Text style={{ color: "black", fontSize: 20, fontFamily: 'NunitoBold', }}>Answers</Text>
           </TouchableOpacity>
         </View>
 
@@ -127,8 +128,8 @@ const App = (props) => {
             }}
             onPress={() => navigation.navigate("Quiz List")}
           >
-            <Ionicons name="pencil" size={48} color="#424242" />
-            <Text style={{ color: "black", fontSize: 20, fontFamily: "NunitoRegular", }}>Quiz</Text>
+          <FontAwesome5 name="pencil-ruler" size={48} color="black" />
+            <Text style={{ color: "black", fontSize: 20, fontFamily: 'NunitoBold', }}>Quiz</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -151,8 +152,8 @@ const App = (props) => {
             }}
             onPress={() => navigation.navigate("Settings")}
           >
-            <Ionicons name="settings" size={48} color="#424242" />
-            <Text style={{ color: "black", fontSize: 20, fontFamily: "NunitoRegular", }}>Settings</Text>
+            <Ionicons name="settings-sharp" size={48} color="black" />
+            <Text style={{ color: "black", fontSize: 20, fontFamily: 'NunitoBold', }}>Settings</Text>
           </TouchableOpacity>
         </View>
       </View>

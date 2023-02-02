@@ -18,24 +18,30 @@ import { useNavigation } from "@react-navigation/native";
 import SafeViewAndroid from "../../app/assets/components/SafeViewAndroid";
 
 const App = () => {
-  const [answer1, setAnswer1] = useState("");
-  const [answer2, setAnswer2] = useState("");
-  const [answer3, setAnswer3] = useState("");
-  const [answer4, setAnswer4] = useState("");
-  const [totalScore, setTotalScore] = useState("");
-  const [showScore, setShowScore] = useState("");
+  const [answer1, setAnswer1] = useState('');
+  const [answer2, setAnswer2] = useState('');
+  const [answer3, setAnswer3] = useState('');
+  const [answer4, setAnswer4] = useState('');
 
-  const correctAnswerList = () => {
-
+  const showScore = () => {
+    var totalScore = 0;
+    if (answer1 == '44') {
+      totalScore += 1;
+    }
+    if (answer2 == '43') {
+      totalScore += 1;
+    }
+    if (answer3 == '84') {
+      totalScore += 1;
+    }
+    if (answer4 == '55') {
+      totalScore += 1;
+    }
+    Alert.alert('Well done!', 'You scored ' + totalScore + ' out of 4.', [{
+      text: 'OK',
+      onPress: () => console.log('Quiz 1 Completed')
+    }])
   }
-
-  const successMessage = () =>
-    Alert.alert('Great Work!', 'You have completed the quiz.', [
-      {
-        text: 'OK',
-        onPress: () => navigation.navigate('Home'),
-      },
-    ]);
 
   const navigation = useNavigation();
   const [loaded] = useFonts({
@@ -48,13 +54,11 @@ const App = () => {
     return null;
   }
 
-
-
   return (
     <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
       <View style={[styles.pagetitle]}>
         <View style={styles.quizCircle}>
-          <FontAwesome5 name="pencil-ruler" size={27} color="#424242" />
+          <FontAwesome5 name="pencil-ruler" size={27} color="black" />
         </View>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Text style={styles.quizText}>Quiz</Text>
@@ -72,7 +76,7 @@ const App = () => {
         </View>
         <View>
           <Text style={{ color: 'darkred' }}>
-            (Fill in the blanks with the question marks below)
+            (Click on the question marks to key in your answer)
           </Text>
         </View>
       </View>
@@ -163,7 +167,7 @@ const App = () => {
         <View>
           <View>
             <Text style={styles.questiontext}>
-              3. Add together 6 hundreds, 24 ones. What number do you get?
+              3. Add together 6 tens, 24 ones. What number do you get?
             </Text>
           </View>
 
@@ -242,7 +246,7 @@ const App = () => {
         <View style={{ height: 40 }}></View>
 
         <View style={{ alignItems: "center" }}>
-          <TouchableOpacity onPress={successMessage}>
+          <TouchableOpacity onPress={showScore}>
             <View style={styles.submitButton}>
               <Text style={styles.submitButtonText}>Submit</Text>
             </View>

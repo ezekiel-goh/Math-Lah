@@ -24,15 +24,15 @@ class QuizDetailScreen extends React.Component {
             headerShown: false,
           }}
         >
-          <Stack.Screen name="Quiz Example" component={QuizExample} />
+          <Stack.Screen name="Answer Example" component={AnswerExample} />
         </Stack.Navigator>
       </NavigationContainer>
     );
   }
 }
 
-const ProgressUnlocked = [{ id: 0, text: "Addition", name: "Progress List" }];
-const ProgressLocked = [
+const AnswerUnlocked = [{ id: 0, text: "Addition", name: "Answer List" }];
+const AnswerLocked = [
   { id: 1, text: "Subtraction" },
   { id: 2, text: "Multiplication" },
   { id: 3, text: "Division" },
@@ -42,8 +42,8 @@ const ProgressLocked = [
 
 const App = () => {
   const navigation = useNavigation();
-  const renderProgressUnlocked = ({ item }) => <ProgressUnlocked item={item} />;
-  const renderProgressLocked = ({ item }) => <ProgressLocked item={item} />;
+  const renderAnswerUnlocked = ({ item }) => <AnswerUnlocked item={item} />;
+  const renderAnswerLocked = ({ item }) => <AnswerLocked item={item} />;
   const [loaded] = useFonts({
     NunitoRegular: require("../../app/assets/fonts/Nunito-Regular.ttf"),
     NunitoBold: require("../../app/assets/fonts/Nunito-Bold.ttf"),
@@ -57,11 +57,11 @@ const App = () => {
 
   return (
     <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
-      <View style={styles.proListHeader}>
-        <View style={styles.proCircle}>
-          <Ionicons
-            style={styles.proIcon}
-            name="md-stats-chart"
+      <View style={styles.answerListHeader}>
+        <View style={styles.answerCircle}>
+          <FontAwesome5
+            style={styles.answerIcon}
+            name="clipboard-list"
             size={30}
             color="black"
           />
@@ -74,26 +74,17 @@ const App = () => {
             fontFamily: "NunitoBold",
           }}
         >
-          Progress
+          Answers
         </Text>
       </View>
 
       <View style={{ flex: 17, marginTop: 30 }}>
-        {/* <FlatList
-          data={Lessons}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <View> */}
-        {/* <FlatList
-          data={ProgressLocked}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => ( */}
-        {ProgressUnlocked.map((item) => {
+        {AnswerUnlocked.map((item) => {
           return (
             <TouchableOpacity
               key={item.text}
               onPress={() => {
-                navigation.navigate("Pro Example");
+                navigation.navigate("Answer Example");
               }}
             >
               <View style={styles.button}>
@@ -121,17 +112,12 @@ const App = () => {
             </TouchableOpacity>
           );
         })}
-
-        {/* <FlatList
-          data={ProgressLocked}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => ( */}
-        {ProgressLocked.map((item) => {
+        {AnswerLocked.map((item) => {
           return (
             <TouchableOpacity
               key={item.text}
               onPress={() => {
-                alert(item.text + " was not attempted");
+                alert(item.text + " is locked");
               }}
             >
               <View style={styles.button}>
@@ -183,14 +169,14 @@ const App = () => {
 
 
 const styles = StyleSheet.create({
-  proListHeader: {
+  answerListHeader: {
     height: "6%",
     flexDirection: "row",
     flexWrap: "wrap",
     marginLeft: "11%",
     marginTop: "8%",
   },
-  proCircle: {
+  answerCircle: {
     backgroundColor: "#BCE4E2",
     height: 60,
     width: 60,
@@ -203,8 +189,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 14,
+    paddingLeft: 5
   },
-  proIcon: {
+  answerIcon: {
     paddingLeft: 13,
     paddingTop: 15,
     justifyContent: "center",
@@ -221,7 +208,7 @@ const styles = StyleSheet.create({
     marginTop: "8%",
   },
 
-  lessonText: {
+  answerText: {
     marginTop: 5,
     marginLeft: 15,
     fontSize: 25,
